@@ -1,0 +1,92 @@
+.ScoreSheet {
+    padding: 30px;
+}
+
+.Players {
+    font-size: 18px;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 500;
+    color: #7c795d;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #eee;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+    -webkit-print-color-adjust: exact;
+}
+
+.Event {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+/* tr.even {
+    background-color: #f9f9f9;
+} */
+
+
+.Error {
+    color: red;
+}
+
+@media screen {
+    .page {
+        margin-top: 60px;
+    }
+}
+@media print {
+    td,
+    th {
+        text-align: left;
+        padding: 6px;
+        border: 1px solid #999;
+    }
+
+    tr:nth-child(even) {
+        background-color: #ccc;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .ScoreSheet {
+        page-break-after: always;
+        margin-top: 0;
+    }
+}
+
+.flex-container {
+    padding: 0;
+    margin: 0 0 10px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-item {
+    font-weight: bold;
+    font-size: 1em;
+    text-align: left;
+    flex: 1 1 auto;
+}
+
+.Result {
+    color: #4c4a37;
+    text-align: right;
+    font-weight: 500;
+    font-family: "Source Sans Pro", sans-serif;
+}

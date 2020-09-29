@@ -1,13 +1,82 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+h1 {
+    color: #7c795d;
+    font-family: "Trocchi", serif;
+    font-size: 45px;
+    font-weight: normal;
+    line-height: 48px;
+    margin: 0;
+}
+
+h2 {
+    color: #7c795d;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 32px;
+    margin: 0 0 10px;
+}
+
+.subheader {
+    font-size: 26px;
+    font-weight: 300;
+    color: #7c795d;
+    margin: 0 0 24px;
+}
+
+p {
+    color: #4c4a37;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 18px;
+    line-height: 32px;
+    margin: 0 0 24px;
+}
+
+a {
+    color: #ff9900;
+    background: #fff4a3;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffcc66;
+}
+
+@page {
+    size: A4;
+    margin: 0;
+}
+
+@media print {
+    html,
+    body {
+        width: 210mm;
+        height: 297mm;
+    }
+
+    .no-print,
+    .no-print * {
+        display: none !important;
+        margin: 0;
+    }
 }

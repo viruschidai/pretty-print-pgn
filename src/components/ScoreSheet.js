@@ -3,105 +3,6 @@ import parser from "../models/parser";
 import "./ScoreSheet.css";
 import transformGames from "../models/game";
 
-function renderTable(startIndex, game) {
-    var trs = [];
-    for (var i = startIndex; i < startIndex + 30; i++) {
-        trs.push(
-            <tr className={i % 2 === 0 ? "even" : "odd"} key={i}>
-                <td>{i}</td>
-                <td>
-                    {game &&
-                        game[0].moves.length > 2 * (i - 1) &&
-                        game[0].moves[2 * (i - 1)].move}
-                </td>
-                <td>
-                    {game &&
-                        game[0].moves.length > 2 * (i - 1) + 1 &&
-                        game[0].moves[2 * (i - 1) + 1].move}
-                </td>
-            </tr>
-        );
-    }
-
-    return (
-        <table>
-            <tr>
-                <th>#</th>
-                <th>White</th>
-                <th>Black</th>
-            </tr>
-            {trs}
-        </table>
-    );
-}
-
-function renderHeader(game) {
-    if (!game) {
-        return null;
-    }
-    var headers = {};
-    game[0].headers.forEach((item) => {
-        headers[item.name] = item.value;
-    });
-
-    return (
-        <div className="ScoreSheetHeader">
-            <h2>
-                <i
-                    className="fas fa-chess logo"
-                    style={{ "font-size": "36px" }}
-                ></i>
-                <div className="Event">
-                    {headers["Event"]} {headers["Date"]}{" "}
-                    {headers["Round"] !== "?"
-                        ? "Round: " + headers["Round"]
-                        : ""}
-                </div>
-            </h2>
-
-            <div className="flex-container">
-                <div className="flex-item flex-item-1 Competitors">
-                    {headers["White"]}(Elo {headers["WhiteElo"]}){" "}
-                    <b>
-                        <em>&#9876;</em>
-                    </b>{" "}
-                    {headers["Black"]}(Elo {headers["BlackElo"]})
-                </div>
-                <div className="flex-item flex-item-2 Result">
-                    Results: {headers["Result"]}{" "}
-                </div>
-            </div>
-        </div>
-    );
-}
-
-function renderPage(game, pageNumber) {
-    return (
-        <div className="page">
-            {game && renderHeader(game)}
-            <div className="row">
-                <div className="column">
-                    {renderTable(pageNumber * 60 + 1, game)}
-                </div>
-                <div className="column">
-                    {renderTable(pageNumber * 60 + 31, game)}
-                </div>
-            </div>
-        </div>
-    );
-}
-
-function renderPages(game, noOfPages) {
-    console.log("noOfPages = ", noOfPages);
-    let pages = [];
-
-    for (let i = 0; i < noOfPages; i++) {
-        pages.push(renderPage(game, i));
-    }
-
-    return pages;
-}
-
 function ScoreSheetHeader({ headers }) {
     const {
         Event,
@@ -180,7 +81,6 @@ function ScoreSheetMoves({startMove, game}) {
     </div>
 }
 
-
 function ScoreSheet({ game, index }) {
     const { headers } = game;
 
@@ -190,6 +90,19 @@ function ScoreSheet({ game, index }) {
             <ScoreSheetMoves key={`sheet#{index}`} startMove={index * 60 + 1} game={game} ></ScoreSheetMoves>
         </div>
     );
+}
+
+function GameScoreSheets({ game }) {
+    const page = Math.ceil(game.noOfMoves / 60);
+
+    const sheets = [];
+    for (let i=0; i<page; i++) {
+        sheets.push(<ScoreSheet game={game} index={i}></ScoreSheet>)
+    }
+   
+    return <div className="GameScoreSheets">
+        { sheets }
+    </div>;
 }
 
 export function Games({ pgn }) {
@@ -225,46 +138,5 @@ export function Games({ pgn }) {
     );
 }
 
-function GameScoreSheets({ game }) {
-    const page = Math.ceil(game.noOfMoves / 60);
 
-    const sheets = [];
-    for (let i=0; i<page; i++) {
-        sheets.push(<ScoreSheet game={game} index={i}></ScoreSheet>)
-    }
-   
-    return <div className="GameScoreSheets">
-        { sheets }
-    </div>;
-}
-
-function ScoreSheets({ pgn }) {
-    let game, err;
-    let page = 0;
-    if (pgn) {
-        console.log("pgn =", pgn);
-        try {
-            game = parser.parse(pgn);
-            page = Math.ceil(game[0].moves.length / 120);
-        } catch (error) {
-            console.log("err =", error);
-            err = error;
-        }
-        console.log(game);
-    }
-
-    return (
-        <div>
-            {err && (
-                <div className="no-print Error">
-                    Failed to parse the PGN, please check to make sure the
-                    syntax is correct
-                </div>
-            )}
-
-            {renderPages(game, page)}
-        </div>
-    );
-}
-
-export default ScoreSheets;
+export default Games;

@@ -33,11 +33,6 @@ tr:nth-child(even) {
     margin-left: 20px;
 }
 
-/* tr.even {
-    background-color: #f9f9f9;
-} */
-
-
 .Error {
     color: red;
 }

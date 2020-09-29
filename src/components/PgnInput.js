@@ -8,6 +8,7 @@ function PgnInput({ setPgn }) {
     };
     return (
         <div className="PgnInput">
+            <p>Print pgn in a scoresheet style</p>
             <textarea
                 className="PgnInputTextArea"
                 placeholder="Please paste pgn here..."

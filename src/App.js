@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import PgnInput from "./components/PgnInput";
 
-import ScoreSheets, {Games} from "./components/ScoreSheet";
+import Games from "./components/ScoreSheet";
 
 const defaultGame = `
 [Event "Belfort World Cup"]

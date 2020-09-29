@@ -2,6 +2,14 @@
     padding: 30px;
 }
 
+.ChessLogo {
+    font-size: 32px;
+}
+
+.ScoreSheetID {
+    width: 40px;
+}
+
 .Players {
     font-size: 18px;
     font-family: "Source Sans Pro", sans-serif;
@@ -12,19 +20,19 @@
 table {
     border-collapse: collapse;
     border-spacing: 0;
-    width: 100%;
-    border: 1px solid #ddd;
+    width: 99%;
+    border: 1px solid #ccc;
 }
 
 th,
 td {
     text-align: left;
     padding: 10px;
-    border: 1px solid #eee;
+    border: 1px solid #ccc;
 }
 
 tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #eee;
     -webkit-print-color-adjust: exact;
 }
 
@@ -35,29 +43,22 @@ tr:nth-child(even) {
 
 .Error {
     color: red;
+    margin: 30px;
 }
 
-@media screen {
-    .page {
-        margin-top: 60px;
-    }
-}
 @media print {
-    td,
-    th {
-        text-align: left;
-        padding: 6px;
-        border: 1px solid #999;
-    }
-
-    tr:nth-child(even) {
-        background-color: #ccc;
-        -webkit-print-color-adjust: exact;
-    }
-
     .ScoreSheet {
-        page-break-after: always;
-        margin-top: 0;
+        page-break-after: auto;
+        padding: 30px;
+    }
+
+    .ScoreSheet:last-child {
+        page-break-after: avoid;
+    }
+
+    th,
+    td {
+        padding: 6px 10px 6px;
     }
 }
 

@@ -36,8 +36,7 @@ function App() {
                 <div className="no-print">
                     <PgnInput setPgn={setPgn}></PgnInput>
                 </div>
-            </div>
-            <Games pgn={pgn}></Games>
+            </div><Games pgn={pgn}></Games>
         </div>
     );
 }

@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c9d01fc38e0690bb67144e22e9135b89",
+    "revision": "2238d11dbc49088f2117d0ace64d50f1",
     "url": "/pretty-print-pgn/index.html"
   },
   {
-    "revision": "e8d6ac1fb363df48ec99",
-    "url": "/pretty-print-pgn/static/css/main.98c51cb5.chunk.css"
+    "revision": "9512cd72c9ecad5360de",
+    "url": "/pretty-print-pgn/static/css/main.832f4213.chunk.css"
   },
   {
     "revision": "66e2dc6207c467dd9e25",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pretty-print-pgn/static/js/2.1ba405da.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e8d6ac1fb363df48ec99",
-    "url": "/pretty-print-pgn/static/js/main.2f1c72a3.chunk.js"
+    "revision": "9512cd72c9ecad5360de",
+    "url": "/pretty-print-pgn/static/js/main.453f9b47.chunk.js"
   },
   {
     "revision": "50c25d8bf497788964a0",

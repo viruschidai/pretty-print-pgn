@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2238d11dbc49088f2117d0ace64d50f1",
+    "revision": "ea0fd3bd65b71f3cfd0a7dffda07267f",
     "url": "/pretty-print-pgn/index.html"
   },
   {

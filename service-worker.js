@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/pretty-print-pgn/precache-manifest.05a117f617a26705e89d47bce53b59a2.js"
+  "/pretty-print-pgn/precache-manifest.2a9f81ffddac1e3b2140871b6b511b19.js"
 );
 
 self.addEventListener('message', (event) => {

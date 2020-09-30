@@ -18,7 +18,7 @@ function ScoreSheetHeader({ headers }) {
         <>
             <h2>
                 <i className="fas fa-chess ChessLogo"></i>
-                <div className="Event">
+                <div className="Event Ellipsis">
                     {Event} {Round && "- Round" + Round} {Date && Date}
                 </div>
 
@@ -26,7 +26,7 @@ function ScoreSheetHeader({ headers }) {
             </h2>
 
             <div className="flex-container">
-                <div className="flex-item Players">
+                <div className="flex-item Players Ellipsis">
                     {White}
                     {WhiteElo !== "?" ? `(#{WhiteElo})` : ""}{" "}
                     <b>

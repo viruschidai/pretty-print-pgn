@@ -21,6 +21,8 @@ function ScoreSheetHeader({ headers }) {
                 <div className="Event">
                     {Event} {Round && "- Round" + Round} {Date && Date}
                 </div>
+
+                <div className="no-print ActionBtn" title="print" onClick={() => window.print()}><i className="fas fa-print"></i></div>
             </h2>
 
             <div className="flex-container">

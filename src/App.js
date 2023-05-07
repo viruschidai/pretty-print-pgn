@@ -33,7 +33,7 @@ function App() {
         <div className="App">
             <div className="Header no-print">
                 <h1 className="no-print">Pretty Print Chess Game PGNs</h1>
-                <p>Print PGNs in a scoresheet like style</p>
+                <p>Print Chess Game PGNs in a scoresheet like style</p>
                 <div className="no-print">
                     <PgnInput setPgn={setPgn}></PgnInput>
                 </div>
